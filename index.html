@@ -9,16 +9,63 @@
         margin: 0;
         height: 100vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
         background: #fdf6ec;
         color: #0f172a;
       }
 
+      .sidebar {
+        width: 200px;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border-right: 1px solid rgba(15, 23, 42, 0.1);
+      }
+
+      .sidebar h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      .sidebar a {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #ff8a00, #da1b60);
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+        box-shadow: 0 4px 12px rgba(218, 27, 96, 0.25);
+      }
+
+      .sidebar a:hover {
+        transform: translateX(4px);
+        box-shadow: 0 6px 16px rgba(218, 27, 96, 0.35);
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
       h1 {
         margin-bottom: 1.5rem;
+        font-size: clamp(4rem, 12vw, 8rem);
+        font-weight: 700;
+        letter-spacing: 0.05em;
       }
 
       .nav-button {
@@ -40,13 +87,38 @@
         transform: translateY(-4px) scale(1.02);
         box-shadow: 0 15px 30px rgba(218, 27, 96, 0.4);
       }
+
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          padding: 1rem;
+          border-right: none;
+          border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+        }
+        .sidebar h2 {
+          margin-bottom: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <a class="nav-button" href="./hello-world-animated.html">
-      Check out the jazzy version
-    </a>
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <a href="./index.html">Home</a>
+      <a href="./about-jend.html">About Me</a>
+      <a href="./message-for-mark.html">Message for Mark</a>
+    </nav>
+    <main class="main-content">
+      <h1>Hello World</h1>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a class="nav-button" href="./about-jend.html">
+          About Me
+        </a>
+      </div>
+    </main>
   </body>
 </html>
 

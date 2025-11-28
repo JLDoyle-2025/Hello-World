@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message for Mark</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: #fdf6ec;
+        color: #0f172a;
+      }
+
+      .sidebar {
+        width: 200px;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border-right: 1px solid rgba(15, 23, 42, 0.1);
+      }
+
+      .sidebar h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      .sidebar a {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #ff8a00, #da1b60);
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+        box-shadow: 0 4px 12px rgba(218, 27, 96, 0.25);
+      }
+
+      .sidebar a:hover {
+        transform: translateX(4px);
+        box-shadow: 0 6px 16px rgba(218, 27, 96, 0.35);
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 8vw, 5rem);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        color: #0f172a;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        margin-bottom: 1rem;
+        color: #475569;
+      }
+
+      h3 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+        color: #64748b;
+        max-width: 800px;
+        margin-bottom: 3rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        width: 100%;
+        margin: 2rem 0;
+      }
+
+      .gallery-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      .gallery-item:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .gallery-item:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .gallery-item:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-10px) rotate(1deg);
+        }
+        50% {
+          transform: translateY(-5px) rotate(0deg);
+        }
+        75% {
+          transform: translateY(-12px) rotate(-1deg);
+        }
+      }
+
+      .gallery-item img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+        transition: transform 300ms ease, box-shadow 300ms ease;
+        object-fit: cover;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .gallery-item:nth-child(1) img {
+        animation-delay: 0s;
+      }
+
+      .gallery-item:nth-child(2) img {
+        animation-delay: 0.5s;
+      }
+
+      .gallery-item:nth-child(3) img {
+        animation-delay: 1s;
+      }
+
+      .gallery-item img:hover {
+        transform: translateY(-8px) scale(1.05) rotate(2deg);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.3);
+        animation-play-state: paused;
+      }
+
+      .gallery-item p {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #475569;
+        text-align: center;
+      }
+
+      .back-button {
+        margin-top: 3rem;
+        padding: 0.9rem 1.8rem;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ff8a00, #da1b60);
+        color: white;
+        font-size: 1rem;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(218, 27, 96, 0.35);
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+
+      .back-button:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(218, 27, 96, 0.4);
+      }
+
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          padding: 1rem;
+          border-right: none;
+          border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+        }
+        .sidebar h2 {
+          margin-bottom: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <a href="./index.html">Home</a>
+      <a href="./about-jend.html">About Me</a>
+      <a href="./message-for-mark.html">Message for Mark</a>
+    </nav>
+    <main class="main-content">
+      <h1>Message for Mark</h1>
+      <h2>This is for you</h2>
+      <h3>I love you... and I love your food. You make my life more delicious.</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="./Mark Vegan Brunch.JPG" alt="Mark's Vegan Brunch" />
+          <p>Vegan Brunch</p>
+        </div>
+        <div class="gallery-item">
+          <img src="./Mark Burger.JPG" alt="Mark's Burger" />
+          <p>Burger</p>
+        </div>
+        <div class="gallery-item">
+          <img src="./Mark Pasta.JPG" alt="Mark's Pasta" />
+          <p>Pasta</p>
+        </div>
+      </div>
+      <a href="./index.html" class="back-button">Back to Home</a>
+    </main>
+  </body>
+</html>
