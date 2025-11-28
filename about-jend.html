@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Jennifer</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f6fb;
+        background-image: linear-gradient(120deg, rgba(84, 105, 212, 0.08), rgba(84, 105, 212, 0)),
+          radial-gradient(circle at 15% 20%, rgba(255, 153, 102, 0.35), transparent 45%),
+          radial-gradient(circle at 80% 30%, rgba(93, 215, 190, 0.35), transparent 50%),
+          radial-gradient(circle at 70% 80%, rgba(255, 216, 102, 0.32), transparent 55%);
+        background-blend-mode: screen, normal, normal, normal;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: #0f172a;
+        padding: 2rem;
+      }
+
+      .card {
+        max-width: 900px;
+        width: 100%;
+        background: rgba(255, 253, 247, 0.95);
+        border-radius: 32px;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+        padding: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+      }
+
+      figure {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 28px;
+        border: 6px solid rgba(59, 130, 246, 0.2);
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: 0.04em;
+      }
+
+      p {
+        line-height: 1.7;
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
+
+      .nav-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+      }
+
+      .nav-button {
+        padding: 0.8rem 1.6rem;
+        border-radius: 999px;
+        border: none;
+        background: #0f172a;
+        color: #f8fafc;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+        box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+      }
+
+      .nav-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(15, 23, 42, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <figure>
+        <img src="./JenD2023.jpg" alt="Jennifer learning new skills" />
+      </figure>
+      <section>
+        <h1>Hi, I'm Jennifer</h1>
+        <p>
+          I'm on a mission to build the skills that will let me create for the
+          AI era. Coding for AI feels like unlocking a new language, and every
+          day I'm studying, experimenting, and building confidence with the
+          tools that power intelligent software.
+        </p>
+        <p>
+          When I'm not debugging or tinkering with prompts, you'll probably find
+          me practicing shuffle dance footwork. I love that same feeling of
+          flow—moving, experimenting, and getting just a little smoother every
+          session.
+        </p>
+        <div class="nav-buttons">
+          <a class="nav-button" href="./index.html">Classic Hello</a>
+          <a class="nav-button" href="./hello-world-animated.html">Animated Hello</a>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
+
